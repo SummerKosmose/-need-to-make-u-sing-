@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title> Tay my mother </title>
+<title>Tay my mother</title>
 
 <style>
 
@@ -26,35 +26,6 @@ body{
 /* =========================
    HEART BACKGROUND
 ========================= */
-
-/* .heart{
-    position:absolute;
-    width:70px;
-    height:70px;
-    background:#d8c9b8;
-    transform:rotate(-45deg);
-    opacity:0.8;
-} */
-/* 
-.heart::before,
-.heart::after{
-    content:"";
-    position:absolute;
-    width:70px;
-    height:70px;
-    background:#d8c9b8;
-    border-radius:50%; */
-
-
-/* .heart::before{
-    top:-35px;
-    left:0;
-}
-
-.heart::after{
-    left:35px;
-    top:0;
-} */
 
 .h1{
     top:15%;
@@ -79,7 +50,7 @@ body{
 .window{
     width:650px;
     background:#2a65337b;
-    border:3px dashed#2a6533bb;
+    border:3px dashed #2a6533bb;
     border-radius:18px;
     overflow:hidden;
     box-shadow:0 4px 12px rgba(253, 0, 0, 0.08);
@@ -110,7 +81,7 @@ body{
     justify-content:center;
     color:#777;
     font-size:14px;
-    background-color: #3782423f;
+    background-color:#3782423f;
 }
 
 .controls{
@@ -191,6 +162,12 @@ body{
     box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
 
+/* HIDDEN TEXTBOXES */
+
+.hidden{
+    display:none;
+}
+
 /* NAVIGATION */
 
 .navbox{
@@ -243,9 +220,9 @@ body{
     font-size:14px;
     background:#f6f4f2;
 }
- .profile-img{
 
-     height: 220px;
+.profile-img{
+    height:220px;
     width:187px;
     border-radius:10px;
 }
@@ -270,7 +247,7 @@ body{
     <div class="topbar">
 
         <div class="search">
-            🔍  Taylor Swift
+            🔍 Taylor Swift
         </div>
 
         <div class="controls">
@@ -298,9 +275,29 @@ body{
 
         <div class="right">
 
-            <div class="textbox">
-                 hiiiii this is a web forrr TAYLOR SWIFTTTTT she is my <b>secon</b> fav artist !!!!!!!
+            <!-- TEXT BOXES -->
+
+            <div class="textbox" id="box1">
+                hiiiii this is a web forrr TAYLOR SWIFTTTTT she is my <b>second</b> fav artist !!!!!!!
             </div>
+
+            <div class="textbox hidden" id="box2">
+                Taylor Swift is an American singer-songwriter known for emotional songs and amazing storytellingggg.
+            </div>
+
+            <div class="textbox hidden" id="box3">
+                i lik her because every album has a different vibe and aesthetic and her lyrics are soooo good :D
+            </div>
+
+            <div class="textbox hidden" id="box4">
+                u should lik her because she literally has songs for every emotion everrrrr.
+            </div>
+
+            <div class="textbox hidden" id="box5">
+               <a href="EntomologyBook.pdf"_blank> LOL no real bank statement here 😭</a>
+            </div>
+
+            <!-- NAVIGATION -->
 
             <div class="navbox">
 
@@ -310,10 +307,10 @@ body{
                 </div>
 
                 <div class="links">
-                    <div>~_~abt tayyy</div>
-                    <div>~_~ y i lik her </div>
-                    <div>~_~ y u should lik her </div>
-                    <div>~_~ her bank statment </div>
+                    <div onclick="showBox('box2')">~_~ abt tayyy</div>
+                    <div onclick="showBox('box3')">~_~ y i lik her</div>
+                    <div onclick="showBox('box4')">~_~ y u should lik her</div>
+                    <div onclick="showBox('box5')">~_~ her bank statment</div>
                 </div>
 
             </div>
@@ -322,11 +319,26 @@ body{
 
     </div>
 
-    <!-- FOOTER -->
-
-    
-
 </div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function showBox(id){
+
+    // hide all text boxes
+    const boxes = document.querySelectorAll('.textbox');
+
+    boxes.forEach(box => {
+        box.classList.add('hidden');
+    });
+
+    // show selected box
+    document.getElementById(id).classList.remove('hidden');
+}
+
+</script>
 
 </body>
 </html>
